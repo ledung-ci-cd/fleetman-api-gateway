@@ -15,6 +15,7 @@ pipeline {
          steps {
             cleanWs()
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
+            echo $JAVA_HOME
          }
       }
       stage('Build') {
